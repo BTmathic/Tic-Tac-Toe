@@ -1,0 +1,52 @@
+#title {
+    font-size: 200%;
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+    width: 250px;
+}
+
+#header {
+    color: black;
+    display: flex;
+    font-size: 125%;
+    justify-content: space-around;
+    margin: 30px auto 10px auto;
+    width: 250px;
+}
+
+#difficulty {
+    cursor: pointer;
+    font-size: 150%;
+    margin-top: 10vh;
+    text-align: center;
+}
+
+#difficulty div {
+    padding: 2vh 0;
+}
+
+#player-tile {
+    height: 30vw;
+    margin: 10vh auto 0 auto;
+    width: 30vw;
+}
+
+.select-tile {
+    cursor: pointer;
+    height: 100%;
+    max-height: 130px;
+    max-width: 130px;
+    overflow: hidden;
+    width: 100%;
+}
+
+@media (min-width: $tablet-breakpoint) {
+    #title {
+        margin-left: 100px;
+    }
+
+    #header {
+        margin-left: 100px;
+    }
+}

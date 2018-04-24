@@ -1,0 +1,48 @@
+#gameboard {
+    height: 250px;
+    margin: 0 auto;
+    padding-top: 12px;
+    width: 250px;
+    max-height: 400px;
+    max-width: 400px;
+}
+
+.gameboard-row {
+    display: flex;
+    height: 30%;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.gameboard-row-bottom {
+    border-bottom: 5px solid black;
+}
+
+.gameboard-right {
+    border-right: 5px solid black;
+}
+
+.game-square {
+    cursor: pointer;
+    height: 100%;
+    max-height: 130px;
+    max-width: 130px;
+    overflow: hidden;
+    width: 30%;
+    z-index: 1;
+}
+
+.game-square-click {
+    height: 100%;
+    width: 100%;
+}
+
+.play-o, .play-x {
+    cursor: default;
+}
+
+@media (min-width: 500px) {
+    #gameboard {
+        margin-left: 100px;
+    }
+}
