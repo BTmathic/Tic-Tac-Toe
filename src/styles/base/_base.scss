@@ -1,5 +1,6 @@
 html {
     font-size: 62.5%;
+    height: 100%;
 }
 
 body {
@@ -23,4 +24,12 @@ button {
 
 button:disabled {
     cursor: default;
+}
+
+// Apparently background-attachment: fixed is incredibly poor for
+// (mobile) performance so has been disable in my mobile devices
+@media (max-width: 700px) {
+    body {
+        background-attachment: scroll;
+    }
 }
