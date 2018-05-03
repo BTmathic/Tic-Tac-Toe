@@ -9,12 +9,12 @@ const PlayX = (props) => (
             <defs>
                 <linearGradient id="lightGradient1">
                     <stop offset="0%" stopColor="rgba(0,0,0,0)">
-                        <animate attributeName="stop-color" values="rgba(0,0,0,0); black" dur="0.5s" fill="freeze" begin="0s" />
+                        <animate attributeName="stop-color" values="rgba(0,0,0,0); black" dur="0.3s" fill="freeze" begin="0s" />
                     </stop>
                 </linearGradient>
                 <linearGradient id="lightGradient2">
                     <stop offset="0%" stopColor="rgba(0,0,0,0)">
-                        <animate attributeName="stop-color" values="rgba(0,0,0,0); black" dur="0.5s" fill="freeze" begin="1s" />
+                        <animate attributeName="stop-color" values="rgba(0,0,0,0); black" dur="0.3s" fill="freeze" begin="0.5s" />
                     </stop>
                 </linearGradient>
             </defs>

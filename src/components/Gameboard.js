@@ -11,7 +11,7 @@ export default class Gameboard extends React.Component {
         turn: '',
         user: '', // user is asked if they want to be X or O
         gameOver: false,
-        timeDelay: 2000 // wouldn't be fun if the computer played instantly...
+        timeDelay: 1250 // wouldn't be fun if the computer played instantly...
     }
 
     makePlay = (x, y, tile) => {
@@ -39,7 +39,7 @@ export default class Gameboard extends React.Component {
                     board: currentBoard,
                     turn: nextTurn
                 }));
-            }, 1900);
+            }, 1100);
             const gameOver = this.checkGameOver();
             if (gameOver[0]) {
                 this.setState(() => ({

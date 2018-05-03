@@ -35,7 +35,9 @@ export default class TicTacToe extends React.Component {
                     playMessage: 'Tough luck, tie game!'
                 }));
             }
-            this.setState(() => ({ gameover: true }));
+            setTimeout(() => {
+                this.setState(() => ({ gameover: true }));
+            }, 2000);
         }, 25); // force this setState to not combine with those being called in <Gameboard />
     }
 

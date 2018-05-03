@@ -8,10 +8,10 @@ const PlayO = (props) => (
         <defs>
             <linearGradient id="lightGradient">
                 <stop offset="25%" stopColor="rgba(0,0,0,0)">
-                    <animate attributeName="stop-color" values="rgba(0,0,0,0); black" dur="0.3s" fill="freeze" begin="0s" />
+                    <animate attributeName="stop-color" values="rgba(0,0,0,0); black" dur="0.2s" fill="freeze" begin="0s" />
                 </stop>
                 <stop offset="75%" stopColor="rgba(0,0,0,0)">
-                    <animate attributeName="stop-color" values="rgba(0,0,0,0); black" dur="0.2s" fill="freeze" begin="0.5s" />
+                    <animate attributeName="stop-color" values="rgba(0,0,0,0); black" dur="0.2s" fill="freeze" begin="0.3s" />
                 </stop>
             </linearGradient>
         </defs>
