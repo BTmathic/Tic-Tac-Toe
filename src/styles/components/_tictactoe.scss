@@ -1,18 +1,24 @@
+#container {
+    width: 100vw;
+}
+
 #title {
     font-size: 200%;
-    margin: 0 auto;
+    margin-left: 0;
     padding-top: 20px;
     text-align: center;
-    width: 250px;
 }
 
 #header {
-    color: black;
     display: flex;
     font-size: 125%;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin: 30px auto 10px auto;
-    width: 250px;
+}
+
+#play {
+    font-size: 125%;
+    text-align: center;
 }
 
 #difficulty {
@@ -28,8 +34,8 @@
 
 #player-tile {
     height: 30vw;
-    margin: 10vh auto 0 auto;
-    width: 30vw;
+    margin: 10vh auto;
+    width: 20vw;
 }
 
 .select-tile {
@@ -41,12 +47,19 @@
     width: 100%;
 }
 
+#play-again {
+    cursor: pointer;
+    font-size: 150%;
+    margin-top: 20px;
+    text-align: center;
+}
+
 @media (min-width: $tablet-breakpoint) {
-    #title {
-        margin-left: 100px;
+    #container {
+        width: 450px;
     }
 
-    #header {
-        margin-left: 100px;
+    #player-tile {
+        width: 10vw;
     }
 }

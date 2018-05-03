@@ -13,24 +13,51 @@ export default class TicTacToe extends React.Component {
         difficulty: '',
         tileSelected: false,
         playerTile: '',
-        reset: false
+        reset: false,
+        gameover: false,
+        playMessage: ''
     }
 
     gameOver = (winner) => {
-        if (winner === 'user') {
-            this.setState((prevState) => ({ 
-                userWins: prevState.userWins + 1
-            }));
-        } else if (winner === 'compy') {
-            this.setState((prevState) => ({
-                compyWins: prevState.compyWins + 1
-            }));
+        setTimeout(() => {
+            if (winner === 'user') {
+                this.setState((prevState) => ({
+                    userWins: prevState.userWins + 1,
+                    playMessage: 'Congratulations, you won!'
+                }));
+            } else if (winner === 'compy') {
+                this.setState((prevState) => ({
+                    compyWins: prevState.compyWins + 1,
+                    playMessage: 'Tough luck, computer won!'
+                }));
+            } else {
+                this.setState((prevState) => ({
+                    playMessage: 'Tough luck, tie game!'
+                }));
+            }
+            this.setState(() => ({ gameover: true }));
+        }, 25); // force this setState to not combine with those being called in <Gameboard />
+    }
+
+    displayPlayMessage = (player) => {
+        let playMessage;
+        if (player === 'user') {
+            playMessage = 'Your turn!'
+        } else {
+            playMessage = "Computer's turn!"
         }
-        this.setState(() => ({ reset: true }));
+        this.setState(() => ({ playMessage }));
     }
 
     playAgain = () => {
-        this.setState(() => ({ reset: false }));
+        this.setState(() => ({ reset: true }));
+        setTimeout(() => {
+            this.setState(() => ({
+                reset: false,
+                gameover: false,
+                playMessage: ''
+            }));
+        }, 50);
     }
 
     setDifficulty = (difficulty) => {
@@ -49,25 +76,24 @@ export default class TicTacToe extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id='container'>
                 <div id='title'>Tic Tac Toe</div>
                 { (this.state.difficultySelected && this.state.tileSelected) && 
                     <div id='gameplay'>
                         <div id='header'>
-                            <div id='user-score'>User: {this.state.userWins}</div>
+                            <div id='user-score'>You: {this.state.userWins}</div>
                             <div id='compy-score'>Computer: {this.state.compyWins}</div>
+                        </div>
+                        <div id='play'>
+                            { this.state.playMessage }
                         </div>
                         <Gameboard
                             gameOver={this.gameOver}
                             reset={this.state.reset}
                             difficulty={this.state.difficulty}
                             playerTile={this.state.playerTile}
+                            displayPlayMessage={this.displayPlayMessage}
                         />
-                    </div>
-                }
-                { this.state.reset &&
-                    <div id='play-again' onClick={() => {this.playAgain()}}>
-                        Play again
                     </div>
                 }
                 { !this.state.difficultySelected && 
@@ -86,6 +112,11 @@ export default class TicTacToe extends React.Component {
                         <div className='select-tile' onClick={() => { this.setPlayerTile('O') }}>
                             <StationaryO />
                         </div>
+                    </div>
+                }
+                {this.state.gameover &&
+                    <div id='play-again' onClick={() => { this.playAgain() }}>
+                        Play again
                     </div>
                 }
             </div>
