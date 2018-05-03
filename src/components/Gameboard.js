@@ -22,24 +22,26 @@ export default class Gameboard extends React.Component {
             let currentBoard = this.state.board;
             if (this.state.turn === 'X') {
                 currentBoard[x][y] = <PlayX />;
+                setTimeout(() => {
+                    currentBoard[x][y] = <StationaryX />;
+                }, 700);
             } else {
                 currentBoard[x][y] = <PlayO />;
+                setTimeout(() => {
+                    currentBoard[x][y] = <StationaryO />;
+                }, 700);
+                
             }
             this.setState(() => ({
                 game: currentGame,
-                board: currentBoard
+                board: currentBoard,
+                turn: nextTurn
             }));
             setTimeout(() => {
-                if (this.state.turn === 'X') {
-                    currentBoard[x][y] = <StationaryX />;
-                } else {
-                    currentBoard[x][y] = <StationaryO />;
-                }
                 this.setState(() => ({
                     board: currentBoard,
-                    turn: nextTurn
                 }));
-            }, 1100);
+            }, 700);
             const gameOver = this.checkGameOver();
             if (gameOver[0]) {
                 this.setState(() => ({
