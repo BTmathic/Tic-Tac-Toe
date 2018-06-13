@@ -59,7 +59,7 @@ export default class TicTacToe extends React.Component {
                 gameover: false,
                 playMessage: ''
             }));
-        }, 50);
+        }, 5);
     }
 
     setDifficulty = (difficulty) => {
