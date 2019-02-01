@@ -9,6 +9,6 @@ Classic game of Tic Tac Toe with four difficulties to choose from. The user can 
 
 ### Build Tools
 
-* Webpack
+* Parcel
 * Yarn
 * Babel
